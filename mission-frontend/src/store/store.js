@@ -2,15 +2,15 @@ import { combineReducers, applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { routerMiddleware, routerReducer } from '../router/router';
 import { sagaMiddleware } from './sagas/saga';
-import authReducer from './reducers/authReducer';
 
 import appConfig from '../appConfig';
 import { identity } from 'lodash';
+import { metalCostingReducer } from './reducers/metalCostingReducer/metalCostingReducer';
 
 const configureStore = (initialState = {}) => {
   const rootReducer = combineReducers({
     router: routerReducer,
-    auth: authReducer
+    metalCosting: metalCostingReducer
   });
 
   // Create the store

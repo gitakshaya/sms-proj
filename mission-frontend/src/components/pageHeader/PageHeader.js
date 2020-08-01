@@ -1,8 +1,6 @@
-/**
- * Created by bharatm on 4/21/18.
- */
-
 import React, { Component } from 'react';
+import { Layout } from 'antd';
+const { Header } = Layout;
 
 class PageHeader extends Component {
   constructor(props) {
@@ -12,7 +10,9 @@ class PageHeader extends Component {
     };
   }
   render() {
-    return <div />;
+    return (<Header className="header">
+      <div className="logo" />
+    </Header>)
   }
 }
 

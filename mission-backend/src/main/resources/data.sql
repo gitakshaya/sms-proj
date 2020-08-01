@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS costings;
+ 
+CREATE TABLE costings (
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  city VARCHAR(250)  NULL,
+  status VARCHAR(250) NULL,
+  color VARCHAR(250) DEFAULT NULL,
+  start_date DATE NULL,
+  end_date DATE NULL,
+  price VARCHAR(250)
+);

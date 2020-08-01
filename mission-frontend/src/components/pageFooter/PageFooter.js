@@ -1,15 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import intl from 'react-intl-universal';
-
-class PageFooter extends Component {
-  getYear() {
-    return new Date().getFullYear();
-  }
-  render() {
-    const defaultFooterText = intl.get('app.footer', {
-      year: this.getYear()
-    });
-    return <div />;
-  }
+import { Layout } from 'antd';
+const { Footer } = Layout;
+const PageFooter = () => {
+  const getYear = () => new Date().getFullYear();
+  return <Footer className="footer text-center">{intl.get('FOOTER_TEXT', { year: getYear() })}</Footer>;
 }
 export default PageFooter;

@@ -1,10 +1,6 @@
-/**
- * Created by bharatm on 4/21/18.
- */
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Container } from 'reactstrap';
+import { Layout } from 'antd';
 
 class DefaultLayout extends Component {
   static propTypes = {
@@ -17,11 +13,13 @@ class DefaultLayout extends Component {
 
   render() {
     return (
-      <div className="app">
+      <Layout className="app">
         {this.props.header}
-        <Container>{this.props.content}</Container>
+        <Layout.Content className="site-layout-content">
+          <div>{this.props.content}</div>
+        </Layout.Content>
         <footer className="w-100 footer">{this.props.footer}</footer>
-      </div>
+      </Layout>
     );
   }
 }

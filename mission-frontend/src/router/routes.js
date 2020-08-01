@@ -1,21 +1,19 @@
 import React from 'react';
-import LoginPage from '../containers/pages/loginPage';
+import MetalCostingPage from '../containers/pages/metalCostingPage';
 import App from '../components/app/App';
 
 const routes = [
   {
-    path: ['/login', '/logout', '', '/'],
-    authenticated: false,
+    path: ['/metal-costing', '', '/'],
     name: 'index-page',
     action: context => (
       <App context={context}>
-        <LoginPage context={context} />
+        <MetalCostingPage context={context} />
       </App>
     )
   },
   {
     path: '(.*)',
-    authenticated: false,
     action: () => (
       <App>
         <h1>404 Not Found.</h1>

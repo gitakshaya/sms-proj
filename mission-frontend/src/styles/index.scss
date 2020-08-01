@@ -1,3 +1,24 @@
 //Base Styles  common to all the themes
-@import 'base/base.scss';
-@import 'ie-bug-fix.scss';
+@import '../../node_modules/antd/dist/antd.css';
+@import 'base/fonts';
+@import 'base/base';
+#root {
+  height: 100%;
+}
+.app {
+  height: 100%;
+}
+.header {
+  height: 10%;
+  background-color: $primary;
+}
+.site-layout-content {
+  height: 88%;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+}
+.footer {
+  height: 2%;
+  background-color: $gray-400;
+}

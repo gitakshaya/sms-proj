@@ -1,4 +1,3 @@
 export const locale = {
-  'app.footer': 'Holodome',
-  'app.underConstruction': 'Coming Soon...'
+  FOOTER_TEXT: "Metal cost listing app"
 };
