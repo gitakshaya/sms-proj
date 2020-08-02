@@ -1,12 +1,14 @@
 How to start the application
 
-1. Run gradlew clean build
+1. Go to mission-backend folder where gradlew.bat file
+ Run gradlew clean build
 
-2.Go to mission-backend/build/libs and run java -jar mission-0.0.1-SNAPSHOT.jar
+2.Go to mission-backend/build/libs
+run java -jar mission-0.0.1-SNAPSHOT.jar
 
 3. In the browser enter http://localhost:8080
 
-
+----------------------------------------------------
 
 # SMS fullstack challenge
 
