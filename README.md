@@ -15,3 +15,11 @@ Though this is a small app, please pay attention to your application structure.
 Host your code on github or bitbucket and include a README with instructions on
 how to install and run your application. Bonus-points for providing a
 docker-compose file to run your project :)
+-------------------------------------
+
+1 Run 
+gradlew clean build
+
+2.go to mission-backend/build/libs
+run java -jar mission-0.0.1-SNAPSHOT.jar
+

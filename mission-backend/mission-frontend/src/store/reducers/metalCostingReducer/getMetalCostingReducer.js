@@ -14,8 +14,7 @@ const getMetalCostingReducer = handleActions(
 
     [getMetalCostingActions.succeeded](state, { payload }) {
       return {
-        apiResponse: [
-          ...payload]
+        apiResponse: [...payload]
       };
     },
 

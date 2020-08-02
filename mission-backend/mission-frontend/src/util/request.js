@@ -3,16 +3,10 @@ const defaultAjaxTimeout = 600000;
 
 // this is here so that we can append the .timeout call to all of our ajax requests with the default value.
 const requestWrapper = method => url => data => {
-  const gateWayUrl = process.env[process.env.REACT_APP_STAGE];
+  const gateWayUrl = process.env['API_PREFIX'];
+  console.log('gatewayurl', gateWayUrl)
   url = gateWayUrl ? `${gateWayUrl}${url}` : url;
-  let requestPromise;
-  if (method === 'fileOperationDownload' || method === 'fileOperationDownloadPost') {
-    requestPromise = request['post'](url);
-    requestPromise.send(data);
-    requestPromise.responseType('blob');
-  } else {
-    requestPromise = request[method](url);
-  }
+  let requestPromise = request[method](url);
   if (method === 'get') {
     requestPromise.query(data);
   } else if (method === 'fileOperationUpload') {

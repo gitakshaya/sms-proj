@@ -2,7 +2,9 @@ plugins {
 	id 'org.springframework.boot' version '2.3.2.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
+	id 'com.github.node-gradle.node' version "2.2.0"
 }
+
 
 group = 'com.sms.test'
 version = '0.0.1-SNAPSHOT'
@@ -27,6 +29,40 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+}
+node {
+//	distBaseUrl = 'https://nodejs.org/dist/latest-erbium/'
+	version = '12.18.3'
+	npmVersion = '6.14.6'
+	download = true
+}
+def frontEndDir = file("${project.projectDir}/mission-frontend")
+
+task clientSetup(type: NpmTask, dependsOn: 'clean') {
+	group = 'setup'
+	description = 'Install react(front-end) assets'
+	workingDir = frontEndDir
+	args = ['run', 'setup']
+}
+
+task buildClient(type: NpmTask, dependsOn: 'clientSetup') {
+	group = 'build'
+	description = 'Compile react(front-end) assets for production'
+	workingDir = frontEndDir
+	args = ['run', 'build']
+}
+
+task resourcesCopy(type: Copy,dependsOn: 'buildClient') {
+        from "${project.projectDir}/mission-frontend/build"
+        into "${project.projectDir}/src/main/resources/static"
+}
+
+
+compileJava.dependsOn(resourcesCopy)
+bootRun.dependsOn(resourcesCopy)
+
+clean {
+    delete "${project.projectDir}/src/main/resources/static"
 }
 
 test {
