@@ -108,7 +108,7 @@ class MetalCosting extends Component {
     })
   }
   render() {
-    const dateFormat = 'YYYY/mm/dd';
+    const dateFormat = 'YYYY/MM/DD';
     return (
       <Card extra={<Button type="primary" onClick={(e) => this.openAddRecord(e, "ADD")}>Add</Button>}>
         <div>
