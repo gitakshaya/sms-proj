@@ -1,3 +1,13 @@
+How to start the application
+
+1. Run gradlew clean build
+
+2.Go to mission-backend/build/libs and run java -jar mission-0.0.1-SNAPSHOT.jar
+
+3. In the browser enter http://localhost:8080
+
+
+
 # SMS fullstack challenge
 
 ### Your mission, should you choose to accept it
@@ -17,9 +27,5 @@ how to install and run your application. Bonus-points for providing a
 docker-compose file to run your project :)
 -------------------------------------
 
-1 Run 
-gradlew clean build
 
-2.go to mission-backend/build/libs
-run java -jar mission-0.0.1-SNAPSHOT.jar
 
