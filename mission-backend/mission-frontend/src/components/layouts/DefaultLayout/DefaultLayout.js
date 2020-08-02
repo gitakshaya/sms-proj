@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Layout } from 'antd';
+import Spinner from '../../spinner';
 
 class DefaultLayout extends Component {
   static propTypes = {
@@ -15,6 +16,7 @@ class DefaultLayout extends Component {
     return (
       <Layout className="app">
         {this.props.header}
+        <Spinner />
         <Layout.Content className="site-layout-content">
           <div>{this.props.content}</div>
         </Layout.Content>

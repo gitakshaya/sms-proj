@@ -44,7 +44,7 @@ public class MetalCostingService
 		return metalCostingDTO;
 	}
 
-	public void deleteCosting(Long id)
+	public String deleteCosting(Long id)
 	{
 		try {
 			metalCostingRepo.deleteById(id);
@@ -52,9 +52,10 @@ public class MetalCostingService
 			log.error(e.getMessage());
 			throw new RuntimeException("Resource could not be deleted");
 		}
+		return "Resource deleted Successfully";
 	}
 
-	public void updateCosting(Long id,MetalCostingDTO costingDTO)
+	public String updateCosting(Long id,MetalCostingDTO costingDTO)
 	{
 		try {
 			MetalCosting costing = MetalCosting.from(costingDTO);
@@ -64,6 +65,6 @@ public class MetalCostingService
 			log.error(e.getMessage());
 			throw new RuntimeException("Resource could not be updated");
 		}
-		
+		return "Resource updated Successfully";
 	}
 }

@@ -19,7 +19,7 @@ const getMetalCostingReducer = handleActions(
     },
 
     [getMetalCostingActions.failed](state, { payload }) {
-      notification.error({ message: intl.get(`API_ERROR_MSG.PRODUCT_CONFIG.${payload.message}`) });
+      notification.error({ message: "Fetching data error" });
       return { ...state, error: payload.error_description };
     }
   },

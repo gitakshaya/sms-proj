@@ -123,6 +123,10 @@ input::placeholder {
   font-size: 12px;
   font-display: $font-family-sans-serif;
 }
+.ant-btn-primary {
+  background-color: $primary;
+  color: $white;
+}
 .ant-input {
   font-size: 14px;
   &::placeholder {

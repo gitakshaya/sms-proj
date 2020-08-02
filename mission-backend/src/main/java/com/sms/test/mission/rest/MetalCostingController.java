@@ -28,12 +28,12 @@ public class MetalCostingController
 		return metalCostingService.getCosting(id);
 	}
 	@DeleteMapping("/{id}")
-	public void deleteCosting(@PathVariable("id")Long id){
-		 metalCostingService.deleteCosting(id);
+	public String deleteCosting(@PathVariable("id")Long id){
+		return metalCostingService.deleteCosting(id);
 	}
 	@PutMapping("/{id}")
-	public void updateCosting(@PathVariable("id")Long id,@RequestBody MetalCostingDTO metalCostingDTO){
-		 metalCostingService.updateCosting(id,metalCostingDTO);
+	public String updateCosting(@PathVariable("id")Long id,@RequestBody MetalCostingDTO metalCostingDTO){
+		return metalCostingService.updateCosting(id,metalCostingDTO);
 	}
 	@PostMapping("/")
 	public MetalCostingDTO saveCosting(@RequestBody MetalCostingDTO metalCostingDTO){
